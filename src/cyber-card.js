@@ -27,34 +27,57 @@ class CyberCard extends LitElement {
   .btn-image{
     margin-left; auto;
     margin-right: auto;
-    padding: 10px
+    padding: 10px;
     max-width: 100%;
     height: auto;
   }
+
   .btn-wrapper {
-    margin: 40px auto;
+    margin: 10px auto;
     
   }
+
   .btn-wrapper button {
-    font-size: 48px;
+    font-size: 24px;
     color: blue;
     background-color: white;
 
   }
 
   .details-button button {
-    font-size: 48px;
+    font-size: 24px;
     color: blue;
     background-color: white;
 
   }
 
   .dup-btn button {
-    font-size: 48px;
+    font-size: 24px;
     color: blue;
     background-color: white;
-    margin: 48px auto;
+    margin: 36px auto;
 
+  }
+
+  .color-btn button{
+    font-size: 24px;
+    color: blue;
+    background-color: white;
+    margin: 36px auto;
+  }
+
+  .text-btn button{
+    font-size: 24px;
+    color: blue;
+    background-color: white;
+    margin: 36px auto;
+  }
+
+  .delete-btn button{
+    font-size: 24px;
+    color: blue;
+    background-color: white;
+    margin: 36px auto;
   }
 
   .dup-btn button:hover{
@@ -77,8 +100,7 @@ class CyberCard extends LitElement {
   }
 
   .card:hover{
-    width: 40%;
-    
+    width: 150%;
     background-size: auto;
     background-color: blue;
   }
@@ -140,6 +162,18 @@ class CyberCard extends LitElement {
     <button id="dup">Duplicate</button>
     </div>
 
+    <div class="color-btn">
+    <button id = "colbtn">Change Color</button>
+    </div>
+
+    <div class="text-btn">
+    <button id = "textbtn">Change Title</button>
+    </div>
+
+    <div class ="delete-btn">
+    <button id = "deletebtn">Delete Card</button>
+    </div>
+
     <h1> Drew Allar</h1>
     <div class="btn-image">
     <img src= "https://th.bing.com/th/id/OIP.yghP1TEXURUPo9L6TeInkAHaD4?w=331&h=180&c=7&r=0&o=5&dpr=2.5&pid=1.7" alt = "Beaver Stadium">
@@ -147,14 +181,12 @@ class CyberCard extends LitElement {
     </div>
 
     <div class="btn-wrapper">
-    <button id="stat">Stats</button>
-    <a href="https://gopsusports.com/sports/football/roster/drew-allar/13992"></a>
+    <button onclick = "window.location.href='https://gopsusports.com/sports/football/roster/drew-allar/13992';" id="stat">Stats</button>
     </div>
 
 
     <div class="details-button">
-    <button id="det">Details</button>
-    <a href="https://hax.psu.edu/"></a>
+    <button onclick = "window.location.href='https://hax.psu.edu/';" id="det">Details</button>
     </div>
 
     </div>
