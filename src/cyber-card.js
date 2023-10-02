@@ -22,7 +22,11 @@ class CyberCard extends LitElement {
     background-color: var(--my-cardNEW-background-color);
   }
 
-  
+  .card {
+    background-color: white;
+    max-width: 500px;
+    max-height: 500px;
+  }
 
   .btn-image{
     margin-left; auto;
@@ -100,7 +104,7 @@ class CyberCard extends LitElement {
   }
 
   .card:hover{
-    width: 150%;
+    width: 100%;
     background-size: auto;
     background-color: blue;
   }
@@ -133,13 +137,13 @@ class CyberCard extends LitElement {
     margin-left: 5px;
   }
 
-  @media (max-width: 800px) and (min-width: 500px){
+  @media (max-width: 600px) and (min-width: 500px){
     details-button{
        display: none;
      }
    }
    
-   @media screen and (max-width: 800px){
+   @media screen and (max-width: 600px){
      .card{
        max-width 500px;
      }
@@ -155,22 +159,45 @@ class CyberCard extends LitElement {
 
   firstUpdated() {
     const colbtn = document.getElementById("colbtn"); 
-const textbtn = document.getElementById("textbtn");
-const deletebtn = document.getElementById("deletebtn");
-const dupbtn = document.getElementById("dup");
+    const textbtn = document.getElementById("textbtn");
+    const deletebtn = document.getElementById("deletebtn");
+    const dupbtn = document.getElementById("dup");
+    
+    
+        
 
-colbtn.addEventListener("click", this.randomColorGenerator);
+    colbtn.addEventListener("click", this.randomColorGenerator);
+    textbtn.addEventListener("click", this.changeTitle);
+    deletebtn.addEventListener("click", this.deleteCard);
+    dupbtn.addEventListener("click", this.duplicateCard);
 
-
-randomColorGenerator() {
-  const randomColor = Math.floor(Math.random()*16777215).toString(16);
-  return randomColor;
-}
   }
+
+  randomColorGenerator() {
+    const randomColor = Math.floor(Math.random()*16777215).toString(16);
+    return randomColor;
+  
+  }
+
+  duplicateCard() {
+    let p = document.getElementById("card");
+    let d = p.cloneNode(true);
+    document.body.appendChild(d);
+  }
+
+  changeTitle() {
+    const title = document.querySelector("h1");
+    title.innerHTML = "Penn State Quarterback";
+  }
+
+  deleteCard() {
+    const card = document.getElementById("card");
+    card.remove();
+  }
+
 
   render() {
     return html`
-    <main>
     <div class="card" id="card"> 
 
     <div class="dup-btn">
@@ -207,19 +234,8 @@ randomColorGenerator() {
     </div>
 
   
-      Code examples
-    </a>
-  </main>
 
-  <p class="app-footer">
-    🚽 Made with love by
-    <a
-      target="_blank"
-      rel="noopener noreferrer"
-      href="https://github.com/open-wc"
-      >open-wc</a
-    >.
-  </p>
+  
 
     `;
   }
