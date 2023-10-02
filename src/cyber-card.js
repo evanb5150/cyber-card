@@ -1,18 +1,6 @@
 import { LitElement, html, css } from 'lit';
 
 const logo = new URL('../assets/open-wc-logo.svg', import.meta.url).href;
-const colbtn = document.getElementById("colbtn"); 
-const textbtn = document.getElementById("textbtn");
-const deletebtn = document.getElementById("deletebtn");
-const dupbtn = document.getElementById("dup");
-
-colbtn.addEventListener("click", this.randomColorGenerator);
-
-
-randomColorGenerator() {
-  const randomColor = Math.floor(Math.random()*16777215).toString(16);
-  return randomColor;
-}
 
 class CyberCard extends LitElement {
   static properties = {
@@ -165,7 +153,20 @@ class CyberCard extends LitElement {
     this.header = 'My app';
   }
 
-  
+  firstUpdated() {
+    const colbtn = document.getElementById("colbtn"); 
+const textbtn = document.getElementById("textbtn");
+const deletebtn = document.getElementById("deletebtn");
+const dupbtn = document.getElementById("dup");
+
+colbtn.addEventListener("click", this.randomColorGenerator);
+
+
+randomColorGenerator() {
+  const randomColor = Math.floor(Math.random()*16777215).toString(16);
+  return randomColor;
+}
+  }
 
   render() {
     return html`
