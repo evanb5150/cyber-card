@@ -155,6 +155,8 @@ class CyberCard extends LitElement {
   constructor() {
     super();
     this.header = 'My app';
+
+    
   }
 
   firstUpdated() {
@@ -194,6 +196,8 @@ class CyberCard extends LitElement {
     const card = document.getElementById("card");
     card.remove();
   }
+
+
 
 
   render() {
