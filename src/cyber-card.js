@@ -42,46 +42,46 @@ class CyberCard extends LitElement {
   }
 
   .btn-wrapper button {
-    font-size: 24px;
+    font-size: 12px;
     color: blue;
     background-color: white;
 
   }
 
   .details-button button {
-    font-size: 24px;
+    font-size: 12px;
     color: blue;
     background-color: white;
 
   }
 
   .dup-btn button {
-    font-size: 24px;
+    font-size: 12px;
     color: blue;
     background-color: white;
-    margin: 36px auto;
+    margin: 24px auto;
 
   }
 
   .color-btn button{
-    font-size: 24px;
+    font-size: 12px;
     color: blue;
     background-color: white;
-    margin: 36px auto;
+    margin: 24px auto;
   }
 
   .text-btn button{
-    font-size: 24px;
+    font-size: 12px;
     color: blue;
     background-color: white;
-    margin: 36px auto;
+    margin: 24px auto;
   }
 
   .delete-btn button{
-    font-size: 24px;
+    font-size: 12px;
     color: blue;
     background-color: white;
-    margin: 36px auto;
+    margin: 24px auto;
   }
 
   .dup-btn button:hover{
@@ -182,9 +182,9 @@ class CyberCard extends LitElement {
   }
 
   duplicateCard() {
-    let p = document.getElementById("card");
+    let p = CyberCard.getElementById("card");
     let d = p.cloneNode(true);
-    document.body.appendChild(d);
+    CyberCard.body.appendChild(d);
   }
 
   changeTitle() {
@@ -203,6 +203,20 @@ class CyberCard extends LitElement {
   render() {
     return html`
     <div class="card" id="card"> 
+    <h1> Drew Allar</h1>
+    <div class="btn-image">
+    <img src= "https://th.bing.com/th/id/OIP.yghP1TEXURUPo9L6TeInkAHaD4?w=331&h=180&c=7&r=0&o=5&dpr=2.5&pid=1.7" alt = "Beaver Stadium">
+    <p> Drew Allar</p> 
+    </div>
+
+    <div class="btn-wrapper">
+    <button onclick = "window.location.href='https://gopsusports.com/sports/football/roster/drew-allar/13992';" id="stat">Stats</button>
+    </div>
+
+
+    <div class="details-button">
+    <button onclick = "window.location.href='https://hax.psu.edu/';" id="det">Details</button>
+    </div>
 
     <div class="dup-btn">
     <button id="dup">Duplicate</button>
@@ -218,21 +232,6 @@ class CyberCard extends LitElement {
 
     <div class ="delete-btn">
     <button id = "deletebtn">Delete Card</button>
-    </div>
-
-    <h1> Drew Allar</h1>
-    <div class="btn-image">
-    <img src= "https://th.bing.com/th/id/OIP.yghP1TEXURUPo9L6TeInkAHaD4?w=331&h=180&c=7&r=0&o=5&dpr=2.5&pid=1.7" alt = "Beaver Stadium">
-    <p> Drew Allar</p> 
-    </div>
-
-    <div class="btn-wrapper">
-    <button onclick = "window.location.href='https://gopsusports.com/sports/football/roster/drew-allar/13992';" id="stat">Stats</button>
-    </div>
-
-
-    <div class="details-button">
-    <button onclick = "window.location.href='https://hax.psu.edu/';" id="det">Details</button>
     </div>
 
     </div>
