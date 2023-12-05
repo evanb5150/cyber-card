@@ -1,6 +1,7 @@
 import { LitElement, html, css } from 'lit';
 
-const logo = new URL('../assets/open-wc-logo.svg', import.meta.url).href;
+// Fix: Unused variable 'logo'
+// const logo = new URL('../assets/open-wc-logo.svg', import.meta.url).href;
 
 class CyberCard extends LitElement {
   static properties = {
@@ -29,7 +30,7 @@ class CyberCard extends LitElement {
   }
 
   .btn-image{
-    margin-left; auto;
+    margin-left: auto;
     margin-right: auto;
     padding: 10px;
     max-width: 100%;
@@ -145,7 +146,7 @@ class CyberCard extends LitElement {
    
    @media screen and (max-width: 600px){
      .card{
-       max-width 500px;
+       max-width: 500px;
      }
      
    }
@@ -157,6 +158,34 @@ class CyberCard extends LitElement {
     this.header = 'My app';
 
     
+  }
+
+ 
+
+  // eslint-disable-next-line class-methods-use-this
+  randomColorGenerator() {
+    const randomColor = Math.floor(Math.random()*16777215).toString(16);
+    return randomColor;
+  
+  }
+
+  // eslint-disable-next-line class-methods-use-this
+  duplicateCard() {
+    const p = CyberCard.getElementById("card");
+    const d = p.cloneNode(true);
+    CyberCard.body.appendChild(d);
+  }
+
+  // eslint-disable-next-line class-methods-use-this
+  changeTitle() {
+    const title = document.querySelector("h1");
+    title.innerHTML = "Penn State Quarterback";
+  }
+
+  // eslint-disable-next-line class-methods-use-this
+  deleteCard() {
+    const card = document.getElementById("card");
+    card.remove();
   }
 
   firstUpdated() {
@@ -175,70 +204,43 @@ class CyberCard extends LitElement {
 
   }
 
-  randomColorGenerator() {
-    const randomColor = Math.floor(Math.random()*16777215).toString(16);
-    return randomColor;
-  
-  }
-
-  duplicateCard() {
-    let p = CyberCard.getElementById("card");
-    let d = p.cloneNode(true);
-    CyberCard.body.appendChild(d);
-  }
-
-  changeTitle() {
-    const title = document.querySelector("h1");
-    title.innerHTML = "Penn State Quarterback";
-  }
-
-  deleteCard() {
-    const card = document.getElementById("card");
-    card.remove();
-  }
-
-
-
 
   render() {
     return html`
-    <div class="card" id="card"> 
-    <h1> Drew Allar</h1>
+    <div class="card" id="card">
+    <h1>Drew Allar</h1>
     <div class="btn-image">
-    <img src= "https://th.bing.com/th/id/OIP.yghP1TEXURUPo9L6TeInkAHaD4?w=331&h=180&c=7&r=0&o=5&dpr=2.5&pid=1.7" alt = "Beaver Stadium">
-    <p> Drew Allar</p> 
+        // eslint-disable-next-line lit/attribute-value-entities
+        <img src="https://th.bing.com/th/id/OIP.yghP1TEXURUPo9L6TeInkAHaD4?w=331&amp;h=180&amp;c=7&amp;r=0&amp;o=5&amp;dpr=2.5&amp;pid=1.7"
+            alt="Drew Allar's">
+        <p>Drew Allar</p>
     </div>
 
     <div class="btn-wrapper">
-    <button onclick = "window.location.href='https://gopsusports.com/sports/football/roster/drew-allar/13992';" id="stat">Stats</button>
+        <button onclick="window.location.href='https://gopsusports.com/sports/football/roster/drew-allar/13992';"
+            id="stat">Stats</button>
     </div>
 
-
     <div class="details-button">
-    <button onclick = "window.location.href='https://hax.psu.edu/';" id="det">Details</button>
+        <button onclick="window.location.href='https://hax.psu.edu/';" id="det">Details</button>
     </div>
 
     <div class="dup-btn">
-    <button id="dup">Duplicate</button>
+        <button id="dup">Duplicate</button>
     </div>
 
     <div class="color-btn">
-    <button id = "colbtn">Change Color</button>
+        <button id="colbtn">Change Color</button>
     </div>
 
     <div class="text-btn">
-    <button id = "textbtn">Change Title</button>
+        <button id="textbtn">Change Title</button>
     </div>
 
-    <div class ="delete-btn">
-    <button id = "deletebtn">Delete Card</button>
+    <div class="delete-btn">
+        <button id="deletebtn">Delete Card</button>
     </div>
-
-    </div>
-
-  
-
-  
+</div>
 
     `;
   }
